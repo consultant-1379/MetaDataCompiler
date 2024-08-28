@@ -1,0 +1,55 @@
+Introduction
+
+* Eniq Events Meta Data Compiler Plugin
+
+	This plugin is used to compile the UIMetaData.json file from a list of json files.
+
+[]
+
+* Goals Overview
+
+	There is only 1 goal in this plugin compile-meta-data. 
+
+[]
+
+* Usage
+	This plugin needs to be configured in the relevant pom.xml (probably best in the services-main pom).  To do so drop the following into the plugins section of the build.
+
+	<build>
+		<plugins>		
+			<plugin> 
+				<groupId>com.ericsson.eniq.events.metadataparser</groupId> 
+				<artifactId>MetaDataCompiler</artifactId> 
+				<version>1.0-SNAPSHOT</version> 
+				<executions> 
+					<execution> 
+						<phase>compile</phase> 
+						<goals> 
+							<goal>compile-meta-data</goal> 
+						</goals> 
+					</execution> 
+				</executions> 
+				<configuration> 		
+					<baseDirectory>${vobs.root}/eniq_events/eniq_events_services/services-main/src/main/resources/uimetadata</baseDirectory>
+					<outputFile>${vobs.root}/eniq_events/eniq_events_services/services-main/src/main/resources/uimetadata/out.txt</outputFile> 
+					<fileInclusionExtension>.json</fileInclusionExtension> 
+				</configuration>
+			</plugin>		
+		</plugins>
+	</build>
+	
+	Plugin configuration parameters:
+
+	baseDirectory - Folder where json files are located.
+	outputFile - The name/location of the file to be created
+	fileInclusionExtension - Files to include by extension, should probably always be .json
+	
+
+	All files in the base directory (uimetadata in example above) that have a .json extension will be merged. 
+	Basically don't put other stuff in this directory or if you have to, make sure it has a different file extension. There are 24 JSON arrays that make up the meta data file so you should have at least that many files in here. 
+
+	These JSON files must be valid. So when editing that means leaving in the opening and closing braces, even though it looks wrong when compared to their equivalent in UIMetaData. The compiler will sort it out. The merge process will validate the JSON in each of the files. If its invalid the build will fail, but it will tell you the line number where the problem is. 
+
+	The output will be formatted, but probably not to the same extent as the manually edited file. This can be updated if necessary by writing a custom extension of .
+
+ []

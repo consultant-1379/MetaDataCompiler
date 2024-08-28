@@ -1,0 +1,82 @@
+{
+	"type": "object",
+	"properties": {
+		"toolBarType": {
+			"type" : "string"
+		},
+		"panels": {
+			"type" : "array",
+			"items": 
+			{
+				"type": "object",
+				"properties": 
+				{											
+							"id": {
+								"type" : "string",
+								"required" : true
+							},
+							"name": {
+								"type" : "string",
+								"required" : true
+							},
+							"style": {
+								"type" : "string"								
+							},
+							"isEnabled": {
+								"enum": [ "TRUE", "FALSE" ],
+            					"required":true
+							},
+							"tip" : {
+								"type" : "string"								
+							},
+							"isToggle" : {
+								"enum": [ "TRUE", "FALSE" ],
+            					"required":true
+							},
+							"eventID" : {
+								"enum": [ "BACK", "FORWARD", "EXPORT", "PROPERTIES", "TIME" ],
+            					"required":true
+							},
+							"items" : {
+								"type": "array",
+								"items": {
+									"type":"object", 
+									"properties": {
+										"id": {
+											"type": "string",
+											"required": true
+										},
+										"name": {
+											"type": "string",
+											"required": true
+										},
+										"eventID": {
+											"type": "string"											
+										},
+										"style": {
+											"type": "string"
+										},
+										"url": {
+											"type": "string"
+										},
+										"windowType" : {
+											"type": "string"
+										},
+										"maxRowsParam" : {
+											"type": "string"
+										}, 
+										"display": {
+											"type": "string"
+										},
+										"nameForTaskBar" : {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}															
+			}
+		}
+	}
+
+}

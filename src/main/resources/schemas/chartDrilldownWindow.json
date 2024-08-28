@@ -1,0 +1,34 @@
+{
+	"type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true
+        },
+        "gridDisplayID" : {
+           "type": "string",
+            "required": true
+        },
+        "url" : {
+           "type": "string",
+            "required": true
+        },
+  		"drillToolBarType" : {
+  		   	"type": "string",
+            "required": true
+  		},
+  		"drillType" : {
+  		   	"type": "string",
+            "required": true
+  		},  		
+  		"chartClickedURLParam" : {
+  		  	"type": "string"            
+  		},  
+  		"maxRowsParam" : {
+  		  	"type": "string"
+  		},
+  		"nameForTaskBar": {
+  			"type": "string"
+  		}
+	}
+}

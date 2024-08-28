@@ -1,0 +1,59 @@
+{
+	"type": "object",
+	"properties": {
+		 "id": {
+            "type": "string",
+            "required":true
+        },
+        "name": {
+            "type": "string",
+            "required":true
+        },
+        "gridDisplayID": {
+        	"type": "string"
+        },
+        "url": {
+        	"type": "string",
+        	"required":true
+        },
+        "params": {
+        	"type": "array",
+        	"required":true,
+        	"items": {
+        		"type": "object",
+        		"properties": {
+        			"id": {
+	       				"type": "string",
+	       				"required":true
+        			},
+        			"queryParamName": {
+        				"type": "string",
+        				"required":true
+        			},
+        			"isTitleParam": {
+        				"type": "string"        				
+        			},
+        			"isFixedVal": {
+        				"type": "string"
+        			}        			        			
+        		}
+        	}
+        },
+        "style": {
+        	"type": "string"
+        },
+        "windowType": {
+        	"type": "string"
+        },
+        "isEnabled": {
+        	"enum": [ "TRUE", "FALSE" ]
+        },
+        "toolBarType": {
+        	"type": "string"
+        },
+        "display": {
+        	"type": "string"
+        }
+        
+	}
+}

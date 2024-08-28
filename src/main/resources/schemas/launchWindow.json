@@ -1,0 +1,41 @@
+{
+	"type": "object",
+	"properties": {
+		 "launchWindowTypeId": {
+            "type": "string",
+            "required":true
+        },
+        "menuItem": {
+            "type": "string"
+        },
+        "searchValFromCol": {
+        	"type": "string"
+        },
+        "type": {
+        	"type": "string"
+        },
+        "params": {
+        	"type": "array",
+        	"items": {
+        		"type": "object",
+        		"properties": {
+        			"id": {
+	       				"type": "string",
+	       				"required":true
+        			},
+        			"queryParamName": {
+        				"type": "string",
+        				"required":true
+        			},
+        			"isTitleParam": {
+        				"type": "string"        				
+        			},
+        			"isFixedVal": {
+        				"type": "string"
+        			}        			        			
+        		}
+        	}
+        }
+        
+	}
+}

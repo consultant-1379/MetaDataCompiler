@@ -1,0 +1,49 @@
+{	
+	"type": "object",
+	"properties": {
+		"wizards": 
+		{
+			"type": "array",			
+			"items": {
+				"type": "object",
+				"properties": {
+					"wizardID" : {
+						"type": "string",
+						"required": true
+					}, 
+					"url" : {
+						"type": "string",
+						"required": true
+					},
+					"wizardContentStyle" : {
+						"type": "string"
+					},
+					"loadurl" : {
+						"type": "string",
+						"required": true
+					}
+				}
+			}
+		},
+		"licenceGroupTypes": 
+		{
+			"type": "array",
+			"required": true,
+			"items" : {
+				"type": "object",
+				"properties" : {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string" 
+					},
+					"dave": {
+						"type": "string",
+						"required": true
+					}
+				}
+			}
+		}
+	}
+}

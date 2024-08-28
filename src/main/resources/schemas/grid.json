@@ -1,0 +1,48 @@
+{    
+ 	"type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required":true
+        },
+        "title": {
+            "type": "string",
+            "required":true            
+        },
+        "noSearchFieldInTitle": {
+            "enum": [ "TRUE", "FALSE" ],
+            "required":true
+        },
+        "autoexpand": {
+            "type": "string",
+            "required":true
+        },
+        "defaultSortCol": {
+            "type": "string",
+            "required":true            
+        },
+        "columns": {
+            "type": "array",
+            "items": 
+            {        
+    			"type" : "object",
+    			"properties" : 
+    			{
+      				"header": {
+            			"type": "string",
+            			"required":true
+            		},
+	            	"width": {
+	            		"type": "string",
+	            		"required":true
+	            	},
+	            	"datatype": {
+	            		"required":true,
+	            		"enum": [ "string", "int" ]
+	            	}
+      			}
+            }
+        }
+    },
+    "additionalProperties" : false
+}

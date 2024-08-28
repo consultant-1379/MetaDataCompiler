@@ -1,0 +1,57 @@
+{
+	"type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required":true
+        },
+        "title": {
+            "type": "string",
+            "required":true            
+        },
+        "ylabel": {
+        	"type": "string"
+        },
+        "xlabel": {
+        	"type": "string"
+        },
+        "secondYAxisID" : {
+        	"type": "string"
+        },
+        "xaxisID" : {
+        	"type": "string"
+        },
+         "items": {
+        	"type": "array",
+        	"required":true,
+        	"items": {
+        		"type": "object",
+        		"properties": {
+        			"id": {
+	       				"type": "string",
+	       				"required":true
+        			},
+        			"name": {
+        				"type": "string",
+        				"required":true
+        			},
+        			"color": {
+        				"type": "string"
+        			},
+        			"queryParam": {
+        				"type": "string"
+        			},
+        			"isLegendPrefix": {
+        				"type": "string"
+        			},
+        			"displayInTooltip" : {
+        				"enum": [ "TRUE", "FALSE" ]
+        			},
+        			"drillDownWindowType": {
+						"type": "string"
+        			}
+        		}
+        	}
+        }
+	}        
+}
